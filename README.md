@@ -33,7 +33,9 @@ optional arguments:
                         cards
 
 #Sample Run
-  using examples from --help:
+
+Sample run using examples from --help:
+  
 **Jeremys-Computer>** *python pokersim.py --hand1 AcTd --hand2 Qh5s --community AdTsXxXxXx 1000*
 
 Total Hands: 1000
