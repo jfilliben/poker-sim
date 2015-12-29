@@ -9,7 +9,6 @@ You must also specify the community cards. You may specify each card, or allow t
 The program outputs how many times each hand won during the Monte Carlo simulation in absolute terms as well as percentage.
 
 # Program Help
-Program Help:
 
 **Jeremys-Computer>** *python pokersim.py --help*
 
