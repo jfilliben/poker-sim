@@ -12,6 +12,7 @@ The program outputs how many times each hand won during the Monte Carlo simulati
 Program Help:
 
 **Jeremys-Computer>** *python pokersim.py --help*
+
 usage: pokersim.py [-h] [--hand1 HAND1] [--hand2 HAND2]
                    [--community COMMUNITY]
                    num_iterations
@@ -34,6 +35,7 @@ optional arguments:
 #Sample Run
   using examples from --help:
 **Jeremys-Computer>** *python pokersim.py --hand1 AcTd --hand2 Qh5s --community AdTsXxXxXx 1000*
+
 Total Hands: 1000
 Hand1: 929 Hand2: 66 Ties: 5
 Hand1: 92.90% Hand2: 6.60% Ties: 0.50%
@@ -43,6 +45,7 @@ The program also includes a test suite (test-pokersim.py) to validate that compa
 It is intended to be run with nosetests:
 
 **Jeremys-Computer>** *nosetests -v*
+
 test_best_five (test-pokersim.TestPokerSim) ... ok
 test_check_flush (test-pokersim.TestPokerSim) ... ok
 test_check_straight (test-pokersim.TestPokerSim) ... ok
