@@ -421,7 +421,8 @@ def main():
                         help="Hand 2 in format [rank][suit], example Qh5s")
     parser.add_argument('--community', type=str,
                         help="Community cards in format [rank][suit], \
-                        example AdTsXxXxXx. You may use Xx for up to five simulated cards")
+                        example AdTsXxXxXx. You may use Xx for up to five \
+                        simulated cards")
     args = parser.parse_args()
     if args.iterations >= 1:
         iterations = args.iterations
