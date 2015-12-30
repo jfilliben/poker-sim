@@ -415,9 +415,9 @@ def main():
     parser.add_argument('iterations', metavar='num_iterations', type=int,
                         help='Number of simulations to run. For accurate \
                         results, run at least 1000 simulations.')
-    parser.add_argument('--hand1', type=str,
+    parser.add_argument('--hand1', type=str, required=True,
                         help="Hand 1 in format [rank][suit], example AcTd")
-    parser.add_argument('--hand2', type=str,
+    parser.add_argument('--hand2', type=str, required=True,
                         help="Hand 2 in format [rank][suit], example Qh5s")
     parser.add_argument('--community', type=str,
                         help="Community cards in format [rank][suit], \
@@ -435,21 +435,22 @@ def main():
         quit("Player 2 Card 1 Invalid")
     if not valid_card(args.hand2[2:4]):
         quit("Player 2 Card 2 Invalid")
-    if not valid_card(args.community[0:2]):
-        quit("Community Card 1 Invalid")
-    if not valid_card(args.community[2:4]):
-        quit("Community Card 2 Invalid")
-    if not valid_card(args.community[4:6]):
-        quit("Community Card 3 Invalid")
-    if not valid_card(args.community[6:8]):
-        quit("Community Card 4 Invalid")
-    if not valid_card(args.community[8:10]):
-        quit("Community Card 5 Invalid")
+
+    temp_community_string = args.community
+    community = ""
+    while temp_community_string:
+        current_community_card = temp_community_string[:2]
+        if not valid_card(current_community_card):
+            quit("Community Card Invalid")
+        community += current_community_card
+        temp_community_string = temp_community_string[2:]
+    while len(community) < 10:
+        community += "Xx"
+
     hand1 = args.hand1
     handnum1 = hand_to_numeric(hand1)
     hand2 = args.hand2
     handnum2 = hand_to_numeric(hand2)
-    community = args.community
 
     # Initialize counters
     totals = [0, 0, 0]
