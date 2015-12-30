@@ -457,10 +457,12 @@ def main():
     totals = [0, 0, 0]
     # Monte Carlo Simulation
     for _ in range(iterations):
-        community_temp = hand_to_numeric(community)
+        community_original = hand_to_numeric(community)
+        community_temp = community_original[:]
         while not legal_hand(handnum1 + handnum2 + community_temp):
+            community_temp = community_original[:]
             for i in range(len(community_temp)):
-                if community[i * 2] == 'X':
+                if community_temp[i][0] == -1:
                     community_temp[i] = [random.randint(0, 12),
                                          random.randint(0, 3)]
         best_hand1 = best_five(handnum1, community_temp)
