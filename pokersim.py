@@ -415,9 +415,9 @@ def main():
     parser.add_argument('iterations', metavar='num_iterations', type=int,
                         help='Number of simulations to run. For accurate \
                         results, run at least 1000 simulations.')
-    parser.add_argument('--hand1', type=str, required=True,
+    parser.add_argument('--hand1', '-h1', type=str, required=True,
                         help="Hand 1 in format [rank][suit], example AcTd")
-    parser.add_argument('--hand2', type=str, required=True,
+    parser.add_argument('--hand2', '-h2', type=str, required=True,
                         help="Hand 2 in format [rank][suit], example Qh5s")
     parser.add_argument('--community', type=str,
                         help="Community cards in format [rank][suit], \
