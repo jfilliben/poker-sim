@@ -10,10 +10,8 @@ The program outputs how many times each hand won during the Monte Carlo simulati
 
 # Program Help
 
-**Jeremys-Computer>** *python pokersim.py --help*
-
-usage: pokersim.py [-h] [--hand1 HAND1] [--hand2 HAND2]
-                   [--community COMMUNITY]
+**Jeremys-Computer>** *python ./pokersim.py --help*
+usage: pokersim.py [-h] --hand1 HAND1 --hand2 HAND2 [--community COMMUNITY]
                    num_iterations
 
 Run a Monte Carlo simulation of a Texas Hold'em Poker Hand
@@ -24,8 +22,10 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --hand1 HAND1         Hand 1 in format [rank][suit], example AcTd
-  --hand2 HAND2         Hand 2 in format [rank][suit], example Qh5s
+  --hand1 HAND1, -h1 HAND1
+                        Hand 1 in format [rank][suit], example AcTd
+  --hand2 HAND2, -h2 HAND2
+                        Hand 2 in format [rank][suit], example Qh5s
   --community COMMUNITY
                         Community cards in format [rank][suit], example
                         AdTsXxXxXx. You may use Xx for up to five simulated
